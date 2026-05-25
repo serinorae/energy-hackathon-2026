@@ -1,0 +1,27 @@
+{
+  "neighbourhoodsAtCriticalRisk": {
+    "value": 4,
+    "total": 10,
+    "label": "Neighbourhoods at critical risk"
+  },
+  "peopleAtHighRisk": {
+    "value": 412000,
+    "percentage": 32,
+    "label": "People at high risk"
+  },
+  "coolingCentresAvailable": {
+    "value": 23,
+    "total": 38,
+    "label": "Cooling centres available"
+  },
+  "centresAtCapacity": {
+    "value": 7,
+    "total": 38,
+    "label": "Centres at capacity over 80%"
+  },
+  "centresWithBackupPower": {
+    "value": 17,
+    "total": 38,
+    "label": "Centres with backup power"
+  }
+}

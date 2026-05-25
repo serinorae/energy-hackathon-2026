@@ -1,0 +1,23 @@
+{
+  "alert": {
+    "type": "Heatwave Warning",
+    "startDate": "May 26, 2026",
+    "endDate": "May 28, 2026",
+    "isActive": true
+  },
+  "current": {
+    "temperatureCelsius": 33,
+    "feelsLikeCelsius": 39,
+    "humidity": 71,
+    "condition": "Sunny"
+  },
+  "forecast": {
+    "label": "Next 3 days",
+    "summary": "High risk conditions",
+    "days": [
+      { "day": "Mon", "high": 33, "low": 23 },
+      { "day": "Tue", "high": 36, "low": 25 },
+      { "day": "Wed", "high": 35, "low": 24 }
+    ]
+  }
+}
