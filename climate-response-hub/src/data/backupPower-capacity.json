@@ -1,0 +1,1294 @@
+{
+  "382": {
+    "backupPower": "no",
+    "capacityPercent": 59
+  },
+  "383": {
+    "backupPower": "yes",
+    "capacityPercent": 56
+  },
+  "384": {
+    "backupPower": "yes",
+    "capacityPercent": 56
+  },
+  "385": {
+    "backupPower": "yes",
+    "capacityPercent": 72
+  },
+  "386": {
+    "backupPower": "yes",
+    "capacityPercent": 75
+  },
+  "387": {
+    "backupPower": "yes",
+    "capacityPercent": 39
+  },
+  "388": {
+    "backupPower": "no",
+    "capacityPercent": 26
+  },
+  "389": {
+    "backupPower": "no",
+    "capacityPercent": 20
+  },
+  "390": {
+    "backupPower": "no",
+    "capacityPercent": 90
+  },
+  "391": {
+    "backupPower": "yes",
+    "capacityPercent": 74
+  },
+  "392": {
+    "backupPower": "no",
+    "capacityPercent": 50
+  },
+  "393": {
+    "backupPower": "yes",
+    "capacityPercent": 85
+  },
+  "394": {
+    "backupPower": "yes",
+    "capacityPercent": 80
+  },
+  "395": {
+    "backupPower": "yes",
+    "capacityPercent": 72
+  },
+  "396": {
+    "backupPower": "unknown",
+    "capacityPercent": 25
+  },
+  "397": {
+    "backupPower": "no",
+    "capacityPercent": 30
+  },
+  "398": {
+    "backupPower": "no",
+    "capacityPercent": 37
+  },
+  "399": {
+    "backupPower": "yes",
+    "capacityPercent": 18
+  },
+  "400": {
+    "backupPower": "yes",
+    "capacityPercent": 61
+  },
+  "401": {
+    "backupPower": "yes",
+    "capacityPercent": 26
+  },
+  "402": {
+    "backupPower": "unknown",
+    "capacityPercent": 76
+  },
+  "403": {
+    "backupPower": "yes",
+    "capacityPercent": 76
+  },
+  "404": {
+    "backupPower": "yes",
+    "capacityPercent": 81
+  },
+  "405": {
+    "backupPower": "yes",
+    "capacityPercent": 15
+  },
+  "406": {
+    "backupPower": "no",
+    "capacityPercent": 81
+  },
+  "407": {
+    "backupPower": "yes",
+    "capacityPercent": 76
+  },
+  "409": {
+    "backupPower": "unknown",
+    "capacityPercent": 21
+  },
+  "410": {
+    "backupPower": "yes",
+    "capacityPercent": 71
+  },
+  "411": {
+    "backupPower": "unknown",
+    "capacityPercent": 42
+  },
+  "412": {
+    "backupPower": "yes",
+    "capacityPercent": 74
+  },
+  "413": {
+    "backupPower": "unknown",
+    "capacityPercent": 58
+  },
+  "414": {
+    "backupPower": "unknown",
+    "capacityPercent": 43
+  },
+  "415": {
+    "backupPower": "no",
+    "capacityPercent": 63
+  },
+  "416": {
+    "backupPower": "yes",
+    "capacityPercent": 15
+  },
+  "417": {
+    "backupPower": "no",
+    "capacityPercent": 30
+  },
+  "418": {
+    "backupPower": "yes",
+    "capacityPercent": 23
+  },
+  "419": {
+    "backupPower": "no",
+    "capacityPercent": 41
+  },
+  "420": {
+    "backupPower": "yes",
+    "capacityPercent": 66
+  },
+  "422": {
+    "backupPower": "unknown",
+    "capacityPercent": 90
+  },
+  "423": {
+    "backupPower": "yes",
+    "capacityPercent": 66
+  },
+  "424": {
+    "backupPower": "yes",
+    "capacityPercent": 19
+  },
+  "425": {
+    "backupPower": "yes",
+    "capacityPercent": 16
+  },
+  "426": {
+    "backupPower": "yes",
+    "capacityPercent": 74
+  },
+  "427": {
+    "backupPower": "unknown",
+    "capacityPercent": 92
+  },
+  "428": {
+    "backupPower": "unknown",
+    "capacityPercent": 79
+  },
+  "429": {
+    "backupPower": "no",
+    "capacityPercent": 54
+  },
+  "430": {
+    "backupPower": "yes",
+    "capacityPercent": 25
+  },
+  "431": {
+    "backupPower": "yes",
+    "capacityPercent": 57
+  },
+  "432": {
+    "backupPower": "unknown",
+    "capacityPercent": 71
+  },
+  "433": {
+    "backupPower": "no",
+    "capacityPercent": 25
+  },
+  "434": {
+    "backupPower": "no",
+    "capacityPercent": 26
+  },
+  "435": {
+    "backupPower": "unknown",
+    "capacityPercent": 85
+  },
+  "436": {
+    "backupPower": "yes",
+    "capacityPercent": 80
+  },
+  "437": {
+    "backupPower": "yes",
+    "capacityPercent": 93
+  },
+  "438": {
+    "backupPower": "unknown",
+    "capacityPercent": 31
+  },
+  "439": {
+    "backupPower": "yes",
+    "capacityPercent": 17
+  },
+  "440": {
+    "backupPower": "no",
+    "capacityPercent": 34
+  },
+  "441": {
+    "backupPower": "yes",
+    "capacityPercent": 40
+  },
+  "442": {
+    "backupPower": "unknown",
+    "capacityPercent": 40
+  },
+  "443": {
+    "backupPower": "yes",
+    "capacityPercent": 75
+  },
+  "444": {
+    "backupPower": "unknown",
+    "capacityPercent": 91
+  },
+  "445": {
+    "backupPower": "no",
+    "capacityPercent": 64
+  },
+  "446": {
+    "backupPower": "no",
+    "capacityPercent": 60
+  },
+  "447": {
+    "backupPower": "yes",
+    "capacityPercent": 78
+  },
+  "448": {
+    "backupPower": "unknown",
+    "capacityPercent": 87
+  },
+  "449": {
+    "backupPower": "no",
+    "capacityPercent": 43
+  },
+  "450": {
+    "backupPower": "no",
+    "capacityPercent": 57
+  },
+  "451": {
+    "backupPower": "yes",
+    "capacityPercent": 82
+  },
+  "453": {
+    "backupPower": "yes",
+    "capacityPercent": 84
+  },
+  "454": {
+    "backupPower": "unknown",
+    "capacityPercent": 89
+  },
+  "455": {
+    "backupPower": "no",
+    "capacityPercent": 79
+  },
+  "456": {
+    "backupPower": "no",
+    "capacityPercent": 56
+  },
+  "457": {
+    "backupPower": "yes",
+    "capacityPercent": 31
+  },
+  "458": {
+    "backupPower": "unknown",
+    "capacityPercent": 61
+  },
+  "459": {
+    "backupPower": "yes",
+    "capacityPercent": 19
+  },
+  "460": {
+    "backupPower": "unknown",
+    "capacityPercent": 24
+  },
+  "461": {
+    "backupPower": "yes",
+    "capacityPercent": 18
+  },
+  "462": {
+    "backupPower": "no",
+    "capacityPercent": 23
+  },
+  "463": {
+    "backupPower": "no",
+    "capacityPercent": 93
+  },
+  "464": {
+    "backupPower": "yes",
+    "capacityPercent": 27
+  },
+  "465": {
+    "backupPower": "yes",
+    "capacityPercent": 31
+  },
+  "466": {
+    "backupPower": "yes",
+    "capacityPercent": 52
+  },
+  "467": {
+    "backupPower": "unknown",
+    "capacityPercent": 69
+  },
+  "468": {
+    "backupPower": "no",
+    "capacityPercent": 21
+  },
+  "469": {
+    "backupPower": "yes",
+    "capacityPercent": 69
+  },
+  "470": {
+    "backupPower": "yes",
+    "capacityPercent": 56
+  },
+  "471": {
+    "backupPower": "unknown",
+    "capacityPercent": 51
+  },
+  "472": {
+    "backupPower": "no",
+    "capacityPercent": 67
+  },
+  "473": {
+    "backupPower": "yes",
+    "capacityPercent": 63
+  },
+  "474": {
+    "backupPower": "yes",
+    "capacityPercent": 45
+  },
+  "475": {
+    "backupPower": "yes",
+    "capacityPercent": 79
+  },
+  "476": {
+    "backupPower": "yes",
+    "capacityPercent": 23
+  },
+  "477": {
+    "backupPower": "no",
+    "capacityPercent": 71
+  },
+  "478": {
+    "backupPower": "yes",
+    "capacityPercent": 17
+  },
+  "480": {
+    "backupPower": "unknown",
+    "capacityPercent": 44
+  },
+  "481": {
+    "backupPower": "yes",
+    "capacityPercent": 67
+  },
+  "482": {
+    "backupPower": "no",
+    "capacityPercent": 33
+  },
+  "483": {
+    "backupPower": "yes",
+    "capacityPercent": 35
+  },
+  "484": {
+    "backupPower": "yes",
+    "capacityPercent": 91
+  },
+  "485": {
+    "backupPower": "yes",
+    "capacityPercent": 69
+  },
+  "486": {
+    "backupPower": "no",
+    "capacityPercent": 38
+  },
+  "487": {
+    "backupPower": "no",
+    "capacityPercent": 68
+  },
+  "488": {
+    "backupPower": "unknown",
+    "capacityPercent": 63
+  },
+  "489": {
+    "backupPower": "yes",
+    "capacityPercent": 28
+  },
+  "490": {
+    "backupPower": "yes",
+    "capacityPercent": 10
+  },
+  "491": {
+    "backupPower": "unknown",
+    "capacityPercent": 18
+  },
+  "492": {
+    "backupPower": "no",
+    "capacityPercent": 30
+  },
+  "493": {
+    "backupPower": "yes",
+    "capacityPercent": 67
+  },
+  "495": {
+    "backupPower": "unknown",
+    "capacityPercent": 86
+  },
+  "496": {
+    "backupPower": "yes",
+    "capacityPercent": 18
+  },
+  "497": {
+    "backupPower": "yes",
+    "capacityPercent": 10
+  },
+  "499": {
+    "backupPower": "unknown",
+    "capacityPercent": 18
+  },
+  "500": {
+    "backupPower": "no",
+    "capacityPercent": 74
+  },
+  "501": {
+    "backupPower": "unknown",
+    "capacityPercent": 88
+  },
+  "502": {
+    "backupPower": "no",
+    "capacityPercent": 37
+  },
+  "503": {
+    "backupPower": "unknown",
+    "capacityPercent": 29
+  },
+  "504": {
+    "backupPower": "yes",
+    "capacityPercent": 43
+  },
+  "505": {
+    "backupPower": "unknown",
+    "capacityPercent": 46
+  },
+  "506": {
+    "backupPower": "yes",
+    "capacityPercent": 37
+  },
+  "507": {
+    "backupPower": "unknown",
+    "capacityPercent": 66
+  },
+  "508": {
+    "backupPower": "yes",
+    "capacityPercent": 41
+  },
+  "509": {
+    "backupPower": "no",
+    "capacityPercent": 62
+  },
+  "510": {
+    "backupPower": "yes",
+    "capacityPercent": 60
+  },
+  "511": {
+    "backupPower": "no",
+    "capacityPercent": 84
+  },
+  "512": {
+    "backupPower": "no",
+    "capacityPercent": 12
+  },
+  "513": {
+    "backupPower": "no",
+    "capacityPercent": 45
+  },
+  "514": {
+    "backupPower": "unknown",
+    "capacityPercent": 45
+  },
+  "515": {
+    "backupPower": "yes",
+    "capacityPercent": 60
+  },
+  "516": {
+    "backupPower": "no",
+    "capacityPercent": 13
+  },
+  "517": {
+    "backupPower": "yes",
+    "capacityPercent": 49
+  },
+  "518": {
+    "backupPower": "yes",
+    "capacityPercent": 52
+  },
+  "519": {
+    "backupPower": "yes",
+    "capacityPercent": 55
+  },
+  "520": {
+    "backupPower": "no",
+    "capacityPercent": 16
+  },
+  "521": {
+    "backupPower": "unknown",
+    "capacityPercent": 22
+  },
+  "522": {
+    "backupPower": "yes",
+    "capacityPercent": 93
+  },
+  "523": {
+    "backupPower": "yes",
+    "capacityPercent": 37
+  },
+  "524": {
+    "backupPower": "no",
+    "capacityPercent": 53
+  },
+  "525": {
+    "backupPower": "yes",
+    "capacityPercent": 67
+  },
+  "526": {
+    "backupPower": "yes",
+    "capacityPercent": 80
+  },
+  "527": {
+    "backupPower": "no",
+    "capacityPercent": 81
+  },
+  "528": {
+    "backupPower": "no",
+    "capacityPercent": 13
+  },
+  "529": {
+    "backupPower": "unknown",
+    "capacityPercent": 64
+  },
+  "530": {
+    "backupPower": "no",
+    "capacityPercent": 32
+  },
+  "531": {
+    "backupPower": "yes",
+    "capacityPercent": 90
+  },
+  "532": {
+    "backupPower": "yes",
+    "capacityPercent": 43
+  },
+  "533": {
+    "backupPower": "yes",
+    "capacityPercent": 34
+  },
+  "534": {
+    "backupPower": "yes",
+    "capacityPercent": 39
+  },
+  "535": {
+    "backupPower": "unknown",
+    "capacityPercent": 16
+  },
+  "536": {
+    "backupPower": "yes",
+    "capacityPercent": 91
+  },
+  "537": {
+    "backupPower": "no",
+    "capacityPercent": 40
+  },
+  "538": {
+    "backupPower": "no",
+    "capacityPercent": 50
+  },
+  "539": {
+    "backupPower": "yes",
+    "capacityPercent": 16
+  },
+  "540": {
+    "backupPower": "no",
+    "capacityPercent": 83
+  },
+  "541": {
+    "backupPower": "unknown",
+    "capacityPercent": 30
+  },
+  "542": {
+    "backupPower": "yes",
+    "capacityPercent": 16
+  },
+  "543": {
+    "backupPower": "unknown",
+    "capacityPercent": 66
+  },
+  "544": {
+    "backupPower": "no",
+    "capacityPercent": 94
+  },
+  "545": {
+    "backupPower": "no",
+    "capacityPercent": 89
+  },
+  "546": {
+    "backupPower": "unknown",
+    "capacityPercent": 13
+  },
+  "547": {
+    "backupPower": "no",
+    "capacityPercent": 27
+  },
+  "548": {
+    "backupPower": "yes",
+    "capacityPercent": 81
+  },
+  "549": {
+    "backupPower": "unknown",
+    "capacityPercent": 94
+  },
+  "550": {
+    "backupPower": "no",
+    "capacityPercent": 84
+  },
+  "551": {
+    "backupPower": "no",
+    "capacityPercent": 80
+  },
+  "552": {
+    "backupPower": "yes",
+    "capacityPercent": 51
+  },
+  "553": {
+    "backupPower": "no",
+    "capacityPercent": 66
+  },
+  "554": {
+    "backupPower": "unknown",
+    "capacityPercent": 80
+  },
+  "555": {
+    "backupPower": "yes",
+    "capacityPercent": 22
+  },
+  "556": {
+    "backupPower": "yes",
+    "capacityPercent": 58
+  },
+  "557": {
+    "backupPower": "yes",
+    "capacityPercent": 94
+  },
+  "558": {
+    "backupPower": "yes",
+    "capacityPercent": 63
+  },
+  "559": {
+    "backupPower": "unknown",
+    "capacityPercent": 65
+  },
+  "560": {
+    "backupPower": "no",
+    "capacityPercent": 34
+  },
+  "561": {
+    "backupPower": "no",
+    "capacityPercent": 49
+  },
+  "562": {
+    "backupPower": "unknown",
+    "capacityPercent": 44
+  },
+  "563": {
+    "backupPower": "unknown",
+    "capacityPercent": 87
+  },
+  "564": {
+    "backupPower": "unknown",
+    "capacityPercent": 32
+  },
+  "573": {
+    "backupPower": "no",
+    "capacityPercent": 52
+  },
+  "574": {
+    "backupPower": "yes",
+    "capacityPercent": 87
+  },
+  "575": {
+    "backupPower": "unknown",
+    "capacityPercent": 87
+  },
+  "576": {
+    "backupPower": "yes",
+    "capacityPercent": 71
+  },
+  "577": {
+    "backupPower": "unknown",
+    "capacityPercent": 41
+  },
+  "578": {
+    "backupPower": "no",
+    "capacityPercent": 62
+  },
+  "579": {
+    "backupPower": "no",
+    "capacityPercent": 55
+  },
+  "580": {
+    "backupPower": "yes",
+    "capacityPercent": 59
+  },
+  "581": {
+    "backupPower": "yes",
+    "capacityPercent": 87
+  },
+  "582": {
+    "backupPower": "yes",
+    "capacityPercent": 48
+  },
+  "583": {
+    "backupPower": "yes",
+    "capacityPercent": 90
+  },
+  "584": {
+    "backupPower": "yes",
+    "capacityPercent": 62
+  },
+  "585": {
+    "backupPower": "yes",
+    "capacityPercent": 50
+  },
+  "588": {
+    "backupPower": "no",
+    "capacityPercent": 83
+  },
+  "589": {
+    "backupPower": "yes",
+    "capacityPercent": 27
+  },
+  "590": {
+    "backupPower": "yes",
+    "capacityPercent": 56
+  },
+  "593": {
+    "backupPower": "unknown",
+    "capacityPercent": 92
+  },
+  "594": {
+    "backupPower": "no",
+    "capacityPercent": 72
+  },
+  "595": {
+    "backupPower": "unknown",
+    "capacityPercent": 24
+  },
+  "596": {
+    "backupPower": "no",
+    "capacityPercent": 55
+  },
+  "597": {
+    "backupPower": "yes",
+    "capacityPercent": 28
+  },
+  "598": {
+    "backupPower": "yes",
+    "capacityPercent": 24
+  },
+  "599": {
+    "backupPower": "no",
+    "capacityPercent": 10
+  },
+  "600": {
+    "backupPower": "unknown",
+    "capacityPercent": 61
+  },
+  "601": {
+    "backupPower": "unknown",
+    "capacityPercent": 61
+  },
+  "602": {
+    "backupPower": "no",
+    "capacityPercent": 89
+  },
+  "603": {
+    "backupPower": "unknown",
+    "capacityPercent": 69
+  },
+  "604": {
+    "backupPower": "no",
+    "capacityPercent": 19
+  },
+  "605": {
+    "backupPower": "yes",
+    "capacityPercent": 94
+  },
+  "606": {
+    "backupPower": "no",
+    "capacityPercent": 47
+  },
+  "610": {
+    "backupPower": "yes",
+    "capacityPercent": 57
+  },
+  "1015": {
+    "backupPower": "no",
+    "capacityPercent": 55
+  },
+  "1016": {
+    "backupPower": "unknown",
+    "capacityPercent": 78
+  },
+  "1017": {
+    "backupPower": "no",
+    "capacityPercent": 63
+  },
+  "1018": {
+    "backupPower": "no",
+    "capacityPercent": 50
+  },
+  "1019": {
+    "backupPower": "no",
+    "capacityPercent": 71
+  },
+  "1020": {
+    "backupPower": "unknown",
+    "capacityPercent": 64
+  },
+  "1021": {
+    "backupPower": "no",
+    "capacityPercent": 61
+  },
+  "1022": {
+    "backupPower": "no",
+    "capacityPercent": 13
+  },
+  "1023": {
+    "backupPower": "yes",
+    "capacityPercent": 45
+  },
+  "1024": {
+    "backupPower": "yes",
+    "capacityPercent": 37
+  },
+  "1025": {
+    "backupPower": "yes",
+    "capacityPercent": 81
+  },
+  "1026": {
+    "backupPower": "yes",
+    "capacityPercent": 66
+  },
+  "1027": {
+    "backupPower": "no",
+    "capacityPercent": 17
+  },
+  "1028": {
+    "backupPower": "no",
+    "capacityPercent": 57
+  },
+  "1029": {
+    "backupPower": "yes",
+    "capacityPercent": 55
+  },
+  "1030": {
+    "backupPower": "unknown",
+    "capacityPercent": 71
+  },
+  "1031": {
+    "backupPower": "yes",
+    "capacityPercent": 36
+  },
+  "1032": {
+    "backupPower": "unknown",
+    "capacityPercent": 92
+  },
+  "1033": {
+    "backupPower": "yes",
+    "capacityPercent": 75
+  },
+  "1034": {
+    "backupPower": "yes",
+    "capacityPercent": 10
+  },
+  "1035": {
+    "backupPower": "yes",
+    "capacityPercent": 24
+  },
+  "1036": {
+    "backupPower": "unknown",
+    "capacityPercent": 44
+  },
+  "1037": {
+    "backupPower": "yes",
+    "capacityPercent": 55
+  },
+  "1038": {
+    "backupPower": "no",
+    "capacityPercent": 74
+  },
+  "1039": {
+    "backupPower": "no",
+    "capacityPercent": 90
+  },
+  "1040": {
+    "backupPower": "yes",
+    "capacityPercent": 11
+  },
+  "1041": {
+    "backupPower": "no",
+    "capacityPercent": 71
+  },
+  "1042": {
+    "backupPower": "yes",
+    "capacityPercent": 19
+  },
+  "1043": {
+    "backupPower": "no",
+    "capacityPercent": 12
+  },
+  "1044": {
+    "backupPower": "yes",
+    "capacityPercent": 86
+  },
+  "1045": {
+    "backupPower": "yes",
+    "capacityPercent": 90
+  },
+  "1046": {
+    "backupPower": "yes",
+    "capacityPercent": 15
+  },
+  "1047": {
+    "backupPower": "yes",
+    "capacityPercent": 52
+  },
+  "1048": {
+    "backupPower": "unknown",
+    "capacityPercent": 92
+  },
+  "1049": {
+    "backupPower": "yes",
+    "capacityPercent": 34
+  },
+  "1050": {
+    "backupPower": "no",
+    "capacityPercent": 78
+  },
+  "1051": {
+    "backupPower": "unknown",
+    "capacityPercent": 56
+  },
+  "1052": {
+    "backupPower": "no",
+    "capacityPercent": 61
+  },
+  "1053": {
+    "backupPower": "no",
+    "capacityPercent": 75
+  },
+  "1054": {
+    "backupPower": "yes",
+    "capacityPercent": 35
+  },
+  "1055": {
+    "backupPower": "yes",
+    "capacityPercent": 51
+  },
+  "1056": {
+    "backupPower": "unknown",
+    "capacityPercent": 75
+  },
+  "1057": {
+    "backupPower": "yes",
+    "capacityPercent": 93
+  },
+  "1058": {
+    "backupPower": "no",
+    "capacityPercent": 48
+  },
+  "1059": {
+    "backupPower": "unknown",
+    "capacityPercent": 18
+  },
+  "1060": {
+    "backupPower": "unknown",
+    "capacityPercent": 77
+  },
+  "1061": {
+    "backupPower": "no",
+    "capacityPercent": 25
+  },
+  "1062": {
+    "backupPower": "yes",
+    "capacityPercent": 15
+  },
+  "1063": {
+    "backupPower": "no",
+    "capacityPercent": 10
+  },
+  "1064": {
+    "backupPower": "yes",
+    "capacityPercent": 13
+  },
+  "1065": {
+    "backupPower": "unknown",
+    "capacityPercent": 74
+  },
+  "1066": {
+    "backupPower": "unknown",
+    "capacityPercent": 94
+  },
+  "1067": {
+    "backupPower": "unknown",
+    "capacityPercent": 93
+  },
+  "1068": {
+    "backupPower": "yes",
+    "capacityPercent": 84
+  },
+  "30001": {
+    "backupPower": "yes",
+    "capacityPercent": 79
+  },
+  "30002": {
+    "backupPower": "no",
+    "capacityPercent": 89
+  },
+  "30003": {
+    "backupPower": "yes",
+    "capacityPercent": 21
+  },
+  "30004": {
+    "backupPower": "unknown",
+    "capacityPercent": 61
+  },
+  "30005": {
+    "backupPower": "no",
+    "capacityPercent": 10
+  },
+  "30006": {
+    "backupPower": "no",
+    "capacityPercent": 52
+  },
+  "30007": {
+    "backupPower": "no",
+    "capacityPercent": 30
+  },
+  "30008": {
+    "backupPower": "unknown",
+    "capacityPercent": 71
+  },
+  "30009": {
+    "backupPower": "no",
+    "capacityPercent": 56
+  },
+  "30010": {
+    "backupPower": "no",
+    "capacityPercent": 37
+  },
+  "30011": {
+    "backupPower": "no",
+    "capacityPercent": 25
+  },
+  "30012": {
+    "backupPower": "unknown",
+    "capacityPercent": 77
+  },
+  "30013": {
+    "backupPower": "unknown",
+    "capacityPercent": 57
+  },
+  "30014": {
+    "backupPower": "unknown",
+    "capacityPercent": 39
+  },
+  "30015": {
+    "backupPower": "unknown",
+    "capacityPercent": 21
+  },
+  "30016": {
+    "backupPower": "no",
+    "capacityPercent": 37
+  },
+  "30017": {
+    "backupPower": "yes",
+    "capacityPercent": 55
+  },
+  "30018": {
+    "backupPower": "no",
+    "capacityPercent": 27
+  },
+  "30019": {
+    "backupPower": "unknown",
+    "capacityPercent": 54
+  },
+  "30020": {
+    "backupPower": "yes",
+    "capacityPercent": 28
+  },
+  "30021": {
+    "backupPower": "yes",
+    "capacityPercent": 78
+  },
+  "30022": {
+    "backupPower": "no",
+    "capacityPercent": 57
+  },
+  "30023": {
+    "backupPower": "yes",
+    "capacityPercent": 35
+  },
+  "30024": {
+    "backupPower": "unknown",
+    "capacityPercent": 20
+  },
+  "30025": {
+    "backupPower": "yes",
+    "capacityPercent": 58
+  },
+  "30026": {
+    "backupPower": "yes",
+    "capacityPercent": 89
+  },
+  "30027": {
+    "backupPower": "no",
+    "capacityPercent": 15
+  },
+  "30028": {
+    "backupPower": "unknown",
+    "capacityPercent": 44
+  },
+  "30029": {
+    "backupPower": "yes",
+    "capacityPercent": 28
+  },
+  "30030": {
+    "backupPower": "no",
+    "capacityPercent": 11
+  },
+  "30031": {
+    "backupPower": "yes",
+    "capacityPercent": 75
+  },
+  "30032": {
+    "backupPower": "no",
+    "capacityPercent": 24
+  },
+  "30033": {
+    "backupPower": "yes",
+    "capacityPercent": 68
+  },
+  "30034": {
+    "backupPower": "unknown",
+    "capacityPercent": 12
+  },
+  "30035": {
+    "backupPower": "no",
+    "capacityPercent": 65
+  },
+  "30036": {
+    "backupPower": "yes",
+    "capacityPercent": 15
+  },
+  "30037": {
+    "backupPower": "no",
+    "capacityPercent": 12
+  },
+  "30038": {
+    "backupPower": "no",
+    "capacityPercent": 80
+  },
+  "30039": {
+    "backupPower": "yes",
+    "capacityPercent": 62
+  },
+  "30040": {
+    "backupPower": "yes",
+    "capacityPercent": 93
+  },
+  "30041": {
+    "backupPower": "yes",
+    "capacityPercent": 35
+  },
+  "30042": {
+    "backupPower": "no",
+    "capacityPercent": 25
+  },
+  "30043": {
+    "backupPower": "no",
+    "capacityPercent": 89
+  },
+  "30044": {
+    "backupPower": "unknown",
+    "capacityPercent": 85
+  },
+  "30045": {
+    "backupPower": "yes",
+    "capacityPercent": 27
+  },
+  "30046": {
+    "backupPower": "unknown",
+    "capacityPercent": 67
+  },
+  "30047": {
+    "backupPower": "no",
+    "capacityPercent": 68
+  },
+  "30048": {
+    "backupPower": "no",
+    "capacityPercent": 89
+  },
+  "30049": {
+    "backupPower": "no",
+    "capacityPercent": 88
+  },
+  "30050": {
+    "backupPower": "no",
+    "capacityPercent": 45
+  },
+  "30051": {
+    "backupPower": "yes",
+    "capacityPercent": 70
+  },
+  "30052": {
+    "backupPower": "no",
+    "capacityPercent": 45
+  },
+  "30053": {
+    "backupPower": "yes",
+    "capacityPercent": 30
+  },
+  "30054": {
+    "backupPower": "no",
+    "capacityPercent": 68
+  },
+  "30055": {
+    "backupPower": "unknown",
+    "capacityPercent": 23
+  },
+  "30056": {
+    "backupPower": "no",
+    "capacityPercent": 20
+  },
+  "30057": {
+    "backupPower": "unknown",
+    "capacityPercent": 48
+  },
+  "30058": {
+    "backupPower": "no",
+    "capacityPercent": 64
+  },
+  "30059": {
+    "backupPower": "yes",
+    "capacityPercent": 27
+  },
+  "30060": {
+    "backupPower": "yes",
+    "capacityPercent": 94
+  },
+  "30061": {
+    "backupPower": "yes",
+    "capacityPercent": 10
+  }
+}
