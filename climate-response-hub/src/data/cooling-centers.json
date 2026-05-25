@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Metro Toronto Reference Library",
+    "lat": 43.6719,
+    "lng": -79.3867,
+    "capacity": 92,
+    "backupPower": true
+  },
+  {
+    "name": "Allan Gardens Community Centre",
+    "lat": 43.6617,
+    "lng": -79.3747,
+    "capacity": 76,
+    "backupPower": false
+  },
+  {
+    "name": "North York Civic Centre",
+    "lat": 43.7675,
+    "lng": -79.4143,
+    "capacity": 54,
+    "backupPower": true
+  },
+  {
+    "name": "Scarborough Civic Centre",
+    "lat": 43.7743,
+    "lng": -79.2574,
+    "capacity": 68,
+    "backupPower": true
+  },
+  {
+    "name": "Etobicoke Civic Centre",
+    "lat": 43.6434,
+    "lng": -79.5656,
+    "capacity": 41,
+    "backupPower": false
+  }
+]
