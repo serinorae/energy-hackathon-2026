@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Map from "@arcgis/core/Map";
 import MapView from "@arcgis/core/views/MapView";
@@ -10,8 +10,8 @@ import Point from "@arcgis/core/geometry/Point";
 import * as geometryEngine from "@arcgis/core/geometry/geometryEngine";
 import * as webMercatorUtils from "@arcgis/core/geometry/support/webMercatorUtils";
 
-const HEATWAVE_START = "2024-06-17";
-const HEATWAVE_END = "2024-06-21";
+const TORONTO_LAT = 43.6532;
+const TORONTO_LNG = -79.3832;
 
 async function getCurrentWatherRisk(lat, lng) {
   try {
@@ -39,32 +39,29 @@ async function getCurrentWatherRisk(lat, lng) {
   }
 }
 
-async function getHeatWaveRisk(lat, lng) {
+async function getForecastRisk(lat, lng, hoursAhead = 12) {
   try {
     const url =
-      `https://archive-api.open-meteo.com/v1/archive` +
+      `https://api.open-meteo.com/v1/forecast` +
       `?latitude=${lat}` +
       `&longitude=${lng}` +
-      `&start_date=${HEATWAVE_START}` +
-      `&end_date=${HEATWAVE_END}` +
-      `&hourly=apparent_temperature` +
+      `&hourly=temperature_2m,relative_humidity_2m,apparent_temperature` +
       `&timezone=America%2FToronto`;
 
     const response = await fetch(url);
     const data = await response.json();
 
-    const temps = data.hourly?.apparent_temperature || [];
-    const validTemps = temps.filter((v) => v !== null && v !== undefined);
-    const maxFeelsLike = Math.max(...validTemps);
+    const feelsLike = data.hourly?.apparent_temperature?.[hoursAhead];
 
-    if (maxFeelsLike >= 42) return 95;
-    if (maxFeelsLike >= 38) return 85;
-    if (maxFeelsLike >= 34) return 70;
-    if (maxFeelsLike >= 30) return 55;
-    return 35;
+    if (feelsLike >= 42) return 95;
+    if (feelsLike >= 38) return 85;
+    if (feelsLike >= 34) return 70;
+    if (feelsLike >= 30) return 55;
+    if (feelsLike >= 25) return 40;
+    return 25;
   } catch (error) {
-    console.error("Heatwave API error:", error);
-    return 75;
+    console.error("Forecast weather API error:", error);
+    return 50;
   }
 }
 
@@ -175,22 +172,6 @@ function emojiIcon(place) {
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
 
-function getMarkerStyle(place) {
-  if (place.backupPower === true) {
-    return { color: "#16a34a", emoji: "⚡" };
-  }
-
-  if (place.backupPower === false) {
-    return { color: "#dc2626", emoji: "⚡" };
-  }
-
-  if (place.backupPower === null || place.backupPower === undefined) {
-    return { color: "#6b7280", emoji: "?" };
-  }
-
-  return { color: "#7c3aed", emoji: "🏢" };
-}
-
 function getCapacityColor(capacity) {
   if (capacity >= 80) return "#ef4444";
   if (capacity >= 60) return "#f97316";
@@ -202,8 +183,23 @@ export default function MapScreen({ onAreaSelect }) {
   const mapDiv = useRef(null);
   const heatRiskRef = useRef(75);
   const coolingPlacesRef = useRef([]);
+  const neighbourhoodLayerRef = useRef(null);
+  const applyRiskModeRef = useRef(null);
+  const onAreaSelectRef = useRef(onAreaSelect);
+
+  const [riskMode, setRiskMode] = useState(() => {
+    return localStorage.getItem("risk-mode") || "current";
+  });
+  const initialRiskModeRef = useRef(
+    localStorage.getItem("risk-mode") || "current",
+  );
 
   useEffect(() => {
+    onAreaSelectRef.current = onAreaSelect;
+  }, [onAreaSelect]);
+
+  useEffect(() => {
+    const managedLayer = new GraphicsLayer();
     const coolingLayer = new GraphicsLayer();
     const labelLayer = new GraphicsLayer();
 
@@ -214,28 +210,46 @@ export default function MapScreen({ onAreaSelect }) {
       popupTemplate: {
         title: "{AREA_NAME}",
         content:
-          "Heat Vulnerability Index is calculated using historical heatwave data, neighbourhood vulnerability, and cooling centre access.",
+          "Heat Vulnerability Index is calculated using weather data, neighbourhood vulnerability, and cooling centre access.",
       },
     });
 
+    neighbourhoodLayerRef.current = neighbourhoodLayer;
+
     const map = new Map({
       basemap: "dark-gray",
-      layers: [neighbourhoodLayer, coolingLayer, labelLayer],
+      layers: [neighbourhoodLayer, managedLayer, coolingLayer, labelLayer],
     });
 
     const view = new MapView({
       container: mapDiv.current,
       map,
-      center: [-79.3832, 43.6532],
+      center: [TORONTO_LNG, TORONTO_LAT],
       zoom: 10,
 
-      // popup: {
-      //   dockEnabled: false,
-      //   actions: [],
-      //   visibleElements: {
-      //     actionBar: false,
-      //   },
-      // },
+      constraints: {
+        minZoom: 9,
+        maxZoom: 14,
+        rotationEnabled: false,
+        geometry: {
+          type: "extent",
+          xmin: -79.75,
+          ymin: 43.55,
+          xmax: -79.05,
+          ymax: 43.9,
+          spatialReference: {
+            wkid: 4326,
+          },
+        },
+      },
+
+      popup: {
+        dockEnabled: false,
+        actions: [],
+        visibleElements: {
+          actionBar: false,
+        },
+      },
     });
 
     let zoomWatcher = null;
@@ -247,11 +261,11 @@ export default function MapScreen({ onAreaSelect }) {
         let showEvery = 1;
 
         if (view.zoom < 10.5) {
-          showEvery = 5; // 처음 화면: 적게
+          showEvery = 5;
         } else if (view.zoom < 11.5) {
-          showEvery = 2; // 첫 번째 확대: 더 많이
+          showEvery = 2;
         } else {
-          showEvery = 1; // 두 번째 확대: 전부 표시
+          showEvery = 1;
         }
 
         if (index % showEvery !== 0) {
@@ -276,7 +290,7 @@ export default function MapScreen({ onAreaSelect }) {
               title: place.name,
               content: `
                 <div style="font-size: 13px; line-height: 1.45;">
-                  <div style="margin-top: 12px;">
+                  <div style="margin-bottom: 10px;">
                     <b>Capacity:</b>
                     <span style="color: ${getCapacityColor(place.capacity)}; font-weight: 800;">
                       ${place.capacity}%
@@ -297,14 +311,13 @@ export default function MapScreen({ onAreaSelect }) {
                         border-radius: 999px;
                       "></div>
                     </div>
+                  </div>
+
                   <div><b>Type:</b> ${place.type}</div>
                   <div><b>Address:</b> ${place.address}</div>
                   <div><b>Phone:</b> ${place.phone}</div>
                   <div><b>Hours:</b> ${place.hours}</div>
                   <div><b>Amenities:</b> ${place.amenities}</div>
-
-
-                  </div>
                 </div>
               `,
             },
@@ -313,6 +326,88 @@ export default function MapScreen({ onAreaSelect }) {
       });
     };
 
+    const applyRiskMode = async (mode) => {
+      setRiskMode(mode);
+      localStorage.setItem("risk-mode", mode);
+
+      let weatherRisk;
+
+      // ================================
+      // OPTION 1: REAL WEATHER DATA
+      // ================================
+
+      // if (mode === "current") {
+      //   weatherRisk = await getCurrentWatherRisk(TORONTO_LAT, TORONTO_LNG);
+      // } else {
+      //   weatherRisk = await getForecastRisk(TORONTO_LAT, TORONTO_LNG, 12);
+      // }
+
+      // ================================
+      // OPTION 2: MOCK DEMO DATA
+      // Current = NOT HEATWAVE
+      // 12-Hour Forecast = HEATWAVE IN 12 HOURS
+      // ================================
+
+      if (mode === "current") {
+        weatherRisk = 25; // normal weather
+      } else {
+        weatherRisk = 95; // heatwave after 12 hours
+      }
+
+      // Do not change here
+      // console.log(
+      //   "mode:",
+      //   mode,
+      //   "weatherRisk:",
+      //   weatherRisk,
+      //   "saved:",
+      //   localStorage.getItem("risk-mode"),
+      // );
+
+      heatRiskRef.current = weatherRisk;
+
+      if (neighbourhoodLayerRef.current) {
+        neighbourhoodLayerRef.current.renderer =
+          createRiskRenderer(weatherRisk);
+      }
+    };
+
+    const renderManagedDistricts = async () => {
+      managedLayer.removeAll();
+
+      await neighbourhoodLayer.when();
+
+      const query = neighbourhoodLayer.createQuery();
+      query.where = "1=1";
+      query.outFields = ["AREA_S_CD", "AREA_NAME"];
+      query.returnGeometry = true;
+
+      const result = await neighbourhoodLayer.queryFeatures(query);
+
+      result.features.forEach((feature) => {
+        const code = feature.attributes.AREA_S_CD;
+        const saved = localStorage.getItem(`managed-district-${code}`);
+
+        if (!saved) return;
+
+        managedLayer.add(
+          new Graphic({
+            geometry: feature.geometry,
+            symbol: {
+              type: "simple-fill",
+              color: [34, 197, 94, 0.08],
+              outline: {
+                color: [34, 197, 94, 1],
+                width: 3,
+              },
+            },
+          }),
+        );
+      });
+    };
+
+    applyRiskModeRef.current = applyRiskMode;
+
     view.when(async () => {
       view.ui.remove("zoom");
       view.map.basemap.referenceLayers.removeAll();
@@ -320,16 +415,20 @@ export default function MapScreen({ onAreaSelect }) {
       const zoom = new Zoom({ view });
       view.ui.add(zoom, "bottom-right");
 
-      //CRUD
-      //getHeatWaveRisk -> getCurrentWatherRisk to see the current risk
-      const weatherRisk = await getHeatWaveRisk(43.6532, -79.3832);
-      heatRiskRef.current = weatherRisk;
-      neighbourhoodLayer.renderer = createRiskRenderer(weatherRisk);
+      await applyRiskMode(initialRiskModeRef.current);
+
+      await renderManagedDistricts();
 
       zoomWatcher = view.watch("zoom", () => {
         renderCoolingPlaces();
       });
     });
+
+    const handleManagedUpdate = () => {
+      renderManagedDistricts();
+    };
+
+    window.addEventListener("managed-district-updated", handleManagedUpdate);
 
     fetch("/air-conditioned-cool-spaces.geojson")
       .then((response) => response.json())
@@ -452,7 +551,7 @@ export default function MapScreen({ onAreaSelect }) {
           })
           .slice(0, 5);
 
-        onAreaSelect({
+        onAreaSelectRef.current({
           name: attributes.AREA_NAME,
           code: attributes.AREA_S_CD,
           riskScore: riskData.riskScore,
@@ -462,6 +561,7 @@ export default function MapScreen({ onAreaSelect }) {
           shelterAccessRisk: riskData.shelterAccessRisk,
           coolingPlaces: coolingPlacesInArea,
           coolingPlaceCount: coolingPlacesInArea.length,
+          riskMode,
         });
       }
     });
@@ -471,9 +571,43 @@ export default function MapScreen({ onAreaSelect }) {
         zoomWatcher.remove();
       }
 
+      window.removeEventListener(
+        "managed-district-updated",
+        handleManagedUpdate,
+      );
+
+      applyRiskModeRef.current = null;
       view.destroy();
     };
-  }, [onAreaSelect]);
+  }, []);
 
-  return <div ref={mapDiv} className="map-area" />;
+  const handleCurrentClick = () => {
+    applyRiskModeRef.current?.("current");
+  };
+
+  const handleForecastClick = () => {
+    applyRiskModeRef.current?.("forecast");
+  };
+
+  return (
+    <div className="map-wrapper">
+      <div className="risk-toggle">
+        <button
+          className={riskMode === "current" ? "active" : ""}
+          onClick={handleCurrentClick}
+        >
+          Current
+        </button>
+
+        <button
+          className={riskMode === "forecast" ? "active" : ""}
+          onClick={handleForecastClick}
+        >
+          12-Hour Forecast
+        </button>
+      </div>
+
+      <div ref={mapDiv} className="map-area" />
+    </div>
+  );
 }
