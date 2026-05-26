@@ -49,57 +49,17 @@ This prototype leverages the Esri ecosystem alongside mock data to demonstrate f
 
 ---
 
-## 6. System Architecture
-The platform consists of three main layers:
+## 6. Tech Stack & Architecture Details
+Our platform is designed as a lightweight, fast, and highly interactive frontend-heavy MVP, utilizing real APIs and spatial data combined with mock infrastructure data.
 
-### 1) Data Layer
-- **ArcGIS Online (Web Maps):** Hosts spatial layers including heat vulnerability indices and shelter locations.
-- **Infrastructure Data:** Real-time status of cooling centers (capacity, power resilience).
-
-### 2) Processing Layer
-- **Triage Logic:** Processes vulnerability scores and infrastructure status to generate recommended actions.
-- **Spatial Analysis:** Uses ArcGIS SDK to calculate optimal routes and identify high-risk hotspots.
-
-### 3) Serving Layer / Web App
-- **React Dashboard:** Provides the "Command Center" interface for emergency coordinators.
-- **ArcGIS Maps SDK:** Powers the interactive map and spatial data visualization.
+*   **React:** Acts as the core logic engine. Handles web display, state management, API interactions, and uses `localStorage` to simulate the 'Log & Track' collaboration database for this prototype.
+*   **CSS:** Responsible for responsive web design, ensuring a clean and accessible user interface for emergency coordinators.
+*   **ArcGIS Maps SDK:** The geospatial engine responsible for rendering map features, displaying district polygons, and managing interactive graphics layers.
+*   **ArcGIS Spatial Analysis API:** Provides advanced spatial computing via API, calculating accurate distances to the nearest cooling centers and actively identifying high-risk hotspots rather than just displaying static data.
+*   **Open-Meteo API:** Provides reliable past and real-time current weather/climate data to trigger heatwave alerts.
+*   **Toronto Neighbourhood GeoJSON:** Supplies the district polygon data to draw neighborhood boundaries on the map.
+*   **Toronto Cool Spaces GeoJSON:** Provides the accurate location data of the City's Heat Relief Network (cool places).
+*   **Mock Data:** Hardcoded JSON logic simulating real-time infrastructure metrics, specifically cooling center *Capacity* and *Backup Generator Status*, demonstrating the platform's ability to integrate with future utility partners (e.g., Alectra).
 
 ### Architecture Diagram (Conceptual)
-```mermaid
-flowchart LR
-    subgraph Data_Layer["Data & Mapping Layer"]
-        direction TB
-        A[Real Climate Data\nEsri Living Atlas]
-        B[Mock APIs\nCapacity & Backup Power]
-        DB[(MongoDB\nAction Logs Database)]
-    end
-
-    subgraph Logic_Layer["Processing & Triage Layer"]
-        direction TB
-        C[ArcGIS Spatial Analysis\nHeat & Vulnerability]
-        D[Node.js / Express\nTriage Logic Engine]
-        
-        A -->|Demographics| C
-        B -->|Live Status| D
-        C -->|Risk Scores| D
-    end
-
-    subgraph Serving_Layer["Serving Layer / UI"]
-        direction TB
-        E[React Vite Dashboard\nArcGIS Maps SDK]
-        F[Coordinator UI\nSpot Gaps & Take Action]
-        E --- F
-    end
-
-    D -->|Actionable Insights\n& Active Badges| E
-    
-    F -.->|Two-Way Feedback Loop:\nLog Action & Sync Status| DB
-    DB -.->|Update State| D
-
-    classDef data fill:#d5f5e3,stroke:#27ae60,stroke-width:2px,stroke-dasharray:5 5;
-    classDef logic fill:#d6eaf8,stroke:#2980b9,stroke-width:2px,stroke-dasharray:5 5;
-    classDef ui fill:#fcf3cf,stroke:#f1c40f,stroke-width:2px,stroke-dasharray:5 5;
-
-    class A,B,DB data;
-    class C,D logic;
-    class E,F ui;
+![Tech Stack Diagram](./docs/5_tech_stack_diagram.png)
