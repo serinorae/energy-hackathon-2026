@@ -10,11 +10,12 @@ These four key documents are designed to provide judges—including representati
 
 ### 1. `system_architecture_diagram.png` (System Architecture Diagram)
 A structural diagram visualizing the platform's overall technology stack and data flow.
-*   **Data & Mapping Layer:** Demonstrates the integration of actual public datasets (such as climate and demographic data from the Esri ArcGIS Living Atlas [8, 9] and the City of Toronto's 500+ Heat Relief Network locations) with mock APIs simulating real-time infrastructure status.
-*   **Processing & Triage Layer:** Represents the core logic layer where Node.js/Express and ArcGIS Spatial Analysis refine the data, allowing the 'Triage Logic Engine' to calculate the localized Energy Equity (Priority) Score.
-*   **Serving Layer / UI:** Illustrates a **two-way feedback loop** where only the processed, actionable logic data is delivered to the React (Vite) dashboard and ArcGIS Maps SDK, and any actions taken by coordinators are fed back and updated in the database.
 
-### 2. uml_usecase_diagram.png (UML & Use Case Diagram)
+*   **Data & Mapping Layer:** Demonstrates the integration of actual public datasets (such as climate and demographic data from the Esri ArcGIS Living Atlas and the City of Toronto's 500+ Heat Relief Network locations) with mock APIs simulating real-time infrastructure status.
+*   **Processing & Triage Layer:** Represents the core logic layer where Node.js/Express and ArcGIS Spatial Analysis refine the data, allowing the 'Triage Logic Engine' to calculate the localized Energy Equity (Priority) Score.
+*   **Serving Layer / UI:** Illustrates a two-way feedback loop where only the processed, actionable logic data is delivered to the React (Vite) dashboard and ArcGIS Maps SDK, and any actions taken by coordinators are fed back and updated in the database.
+
+### 2. `uml_usecase_diagram.png` (UML & Use Case Diagram)
 
 This diagram defines the core CRUD (Create, Read, Update, Delete) functionalities from the perspective of the primary stakeholders: emergency coordinators at Toronto Emergency Management (TEM) and Toronto Shelter & Support Services (TSSS). Instead of a generic system, it specifies actionable, collaborative insights tailored for crisis management to prevent duplicate efforts.
 
