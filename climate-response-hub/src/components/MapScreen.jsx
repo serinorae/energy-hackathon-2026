@@ -16,7 +16,7 @@ import { createRiskRenderer } from "./map/riskRenderer";
 import { emojiIcon, createCoolingPlacePopup } from "./map/markerUtils";
 import { calculateFinalRisk } from "../utils/riskUtils";
 import { loadCoolingPlaces } from "../utils/coolingPlaces";
-import { getDemoWeatherRisk, getForecastRisk } from "../utils/weatherApi";
+import { getDemoWeatherRisk } from "../utils/weatherApi";
 
 function createNeighbourhoodLayer() {
   return new GeoJSONLayer({
@@ -26,7 +26,7 @@ function createNeighbourhoodLayer() {
     popupTemplate: {
       title: "{AREA_NAME}",
       content:
-        "Heat Vulnerability Index is calculated using weather data, neighbourhood vulnerability, and cooling centre access.",
+        "Heat Vulnerability Index is a prototype estimate calculated using demo weather conditions, neighbourhood vulnerability, and cooling centre access.",
     },
   });
 }
@@ -172,12 +172,10 @@ export default function MapScreen({ onAreaSelect }) {
   const applyRiskModeRef = useRef(null);
   const onAreaSelectRef = useRef(onAreaSelect);
 
-  const [riskMode, setRiskMode] = useState(() => {
-    return localStorage.getItem("risk-mode") || "current";
-  });
-  const initialRiskModeRef = useRef(
-    localStorage.getItem("risk-mode") || "current",
-  );
+  const initialRiskMode = localStorage.getItem("risk-mode") || "current";
+  const [riskMode, setRiskMode] = useState(initialRiskMode);
+  const initialRiskModeRef = useRef(initialRiskMode);
+  const riskModeRef = useRef(initialRiskMode);
 
   useEffect(() => {
     onAreaSelectRef.current = onAreaSelect;
@@ -201,6 +199,7 @@ export default function MapScreen({ onAreaSelect }) {
 
     const applyRiskMode = async (mode) => {
       setRiskMode(mode);
+      riskModeRef.current = mode;
       localStorage.setItem("risk-mode", mode);
 
       // Demo mode: current = normal weather, forecast = heatwave after 12 hours.
@@ -275,7 +274,7 @@ export default function MapScreen({ onAreaSelect }) {
         shelterAccessRisk: riskData.shelterAccessRisk,
         coolingPlaces: coolingPlacesInArea,
         coolingPlaceCount: coolingPlacesInArea.length,
-        riskMode,
+        riskMode: riskModeRef.current,
       });
     });
 
@@ -298,6 +297,10 @@ export default function MapScreen({ onAreaSelect }) {
         onForecastClick={() => applyRiskModeRef.current?.("forecast")}
       />
       <div ref={mapDiv} className="map-area" />
+      <div className="map-provenance">
+        Heat vulnerability: prototype estimate · Cooling places: Toronto Open
+        Data · Capacity & backup power: simulated for demo
+      </div>
     </div>
   );
 }

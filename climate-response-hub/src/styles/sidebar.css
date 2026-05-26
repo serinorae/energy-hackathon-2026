@@ -18,12 +18,12 @@
   border-radius: 6px;
   padding: 12px;
   color: #cbd5e1;
-  background: transparent;
-  cursor: pointer;
+  background: #1e293b;
+  cursor: default;
+  font-weight: 700;
 }
 
-.sidebar button.active,
-.sidebar button:hover {
+.sidebar button.active {
   background: #1e293b;
   color: white;
 }
@@ -72,7 +72,8 @@
   display: grid;
   place-items: center;
   color: white;
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: 800;
   border: 1px solid rgba(255, 255, 255, 0.7);
 }
 

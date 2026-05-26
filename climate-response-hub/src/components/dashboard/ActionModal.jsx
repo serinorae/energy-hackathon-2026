@@ -8,7 +8,7 @@ export default function ActionModal({
   return (
     <div className="modal-overlay">
       <div className="modal-box">
-        <h3>Confirm Response Action</h3>
+        <h3>Log a planned response</h3>
 
         <p>
           District: <b>{selectedArea?.name}</b>
@@ -17,7 +17,7 @@ export default function ActionModal({
         <textarea
           value={actionNote}
           onChange={(e) => onChangeNote(e.target.value)}
-          placeholder="Example: Contacted district coordinator and requested mobile cooling unit deployment."
+          placeholder="Example: Contacted district coordinator and logged a plan to request mobile cooling support."
         />
 
         <div className="modal-actions">
@@ -25,7 +25,7 @@ export default function ActionModal({
             Cancel
           </button>
           <button className="confirm-button" onClick={onConfirm}>
-            Confirm
+            Log action
           </button>
         </div>
       </div>

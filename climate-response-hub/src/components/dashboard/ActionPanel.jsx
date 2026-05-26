@@ -12,16 +12,20 @@ export default function ActionPanel({
 
   return (
     <section className="panel-card">
-      <h3>Recommended Action</h3>
+      <h3>Suggested coordinator action</h3>
 
       <div className={`action-card ${levelClass}`}>
-        <div className="alert-icon">{managedAction ? "✅" : "⚠️"}</div>
+        <div className="alert-icon">{managedAction ? "OK" : "!"}</div>
         <div>
-          <strong>{managedAction ? "MANAGED SUCCESSFULLY" : action}</strong>
+          <strong>
+            {managedAction ? "Action logged by coordinator" : action}
+          </strong>
 
           {managedAction ? (
             <>
-              <p>This district has already been handled by a coordinator.</p>
+              <p>
+                A coordinator has recorded a planned response for this area.
+              </p>
               <p>
                 <b>Last update:</b> {managedAction.updatedAt}
               </p>
@@ -31,8 +35,8 @@ export default function ActionPanel({
             </>
           ) : (
             <p>
-              Recommendation is based on estimated heat risk, nearby cooling
-              capacity, and vulnerable population.
+              Suggested action is based on prototype heat risk, simulated
+              capacity, and estimated vulnerable population.
             </p>
           )}
         </div>
@@ -43,12 +47,12 @@ export default function ActionPanel({
         disabled={!selectedArea?.code}
         onClick={onOpenModal}
       >
-        {managedAction ? "Update Action Note" : "Mark Action as Completed"}
+        {managedAction ? "Edit logged action" : "Log coordinator action"}
       </button>
 
       {managedAction && (
         <button className="delete-action-button" onClick={onDeleteAction}>
-          Delete Managed Record
+          Clear logged action
         </button>
       )}
     </section>

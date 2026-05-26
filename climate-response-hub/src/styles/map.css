@@ -36,8 +36,12 @@
 }
 .map-wrapper {
   position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 6px;
   width: 100%;
   height: 100%;
+  min-height: 0;
 }
 
 .risk-toggle {
@@ -67,4 +71,11 @@
 .risk-toggle button.active {
   background: #2563eb;
   color: white;
+}
+
+.map-provenance {
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.3;
+  padding: 0 2px;
 }

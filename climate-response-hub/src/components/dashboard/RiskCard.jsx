@@ -10,11 +10,14 @@ export default function RiskCard({ area, managedAction }) {
       <div className="dashboard-header">
         <h2>{area.name}</h2>
         <span className={`risk-badge ${levelClass}`}>
-          {managedAction ? "MANAGED" : area.level}
+          {managedAction ? "LOGGED" : area.level}
         </span>
       </div>
 
-      <p className="label">Heat Vulnerability Index</p>
+      <p className="label">
+        Heat Vulnerability Index{" "}
+        <span className="data-note">Prototype estimate</span>
+      </p>
 
       <div className="risk-score">
         <span className={levelClass}>{area.riskScore || "-"}</span>
@@ -29,23 +32,29 @@ export default function RiskCard({ area, managedAction }) {
       </div>
 
       {managedAction && (
-        <div className="managed-mini-banner">✅ Response action completed</div>
+        <div className="managed-mini-banner">Coordinator action on file</div>
       )}
 
       <div className="metric-grid">
         <div className="metric-box">
-          <span className="metric-icon">👥</span>
-          <p>Population</p>
+          <span className="metric-icon">POP</span>
+          <p>
+            Population <em className="data-note">Prototype estimate</em>
+          </p>
           <strong>{population}</strong>
         </div>
         <div className="metric-box">
-          <span className="metric-icon">🌡️</span>
-          <p>Forecast High</p>
+          <span className="metric-icon">WX</span>
+          <p>
+            Forecast High <em className="data-note">Demo data</em>
+          </p>
           <strong>34°C</strong>
         </div>
         <div className="metric-box">
-          <span className="metric-icon">💧</span>
-          <p>Heat Index</p>
+          <span className="metric-icon">HI</span>
+          <p>
+            Heat Index <em className="data-note">Prototype estimate</em>
+          </p>
           <strong>{heatIndex}°C</strong>
         </div>
       </div>
