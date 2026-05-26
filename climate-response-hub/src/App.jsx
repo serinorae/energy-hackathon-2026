@@ -17,7 +17,7 @@ function App() {
 
       <main className="main-content">
         <MapScreen onAreaSelect={setSelectedArea} />
-        <SummaryCards />
+        <SummaryCards selectedArea={selectedArea} />
       </main>
 
       <Dashboard selectedArea={selectedArea} />
