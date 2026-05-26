@@ -16,6 +16,7 @@ A structural diagram visualizing the platform's overall technology stack and dat
 
 ### 2. `uml_usecase_diagram.png` (UML & Use Case Diagram)
 This diagram defines the core CRUD (Create, Read, Update, Delete) functionalities from the perspective of the primary stakeholders: emergency coordinators at Toronto Emergency Management (TEM) and Toronto Shelter & Support Services (TSSS). Instead of generic login features, it specifies actionable insights tailored for crisis management.
+
 *   **Create:** Dispatching mobile drinking water trailers or initiating new temporary Resilience Hubs during a heat warning.
 *   **Read:** Viewing real-time localized 'Energy Equity Risk Scores' and identifying accessibility blind spots using Esri GIS data.
 *   **Update:** Approving extended operating hours for public facilities (e.g., libraries, civic centres) and updating shelter capacities in response to changing conditions.
