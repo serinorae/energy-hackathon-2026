@@ -62,4 +62,4 @@ Our platform is designed as a lightweight, fast, and highly interactive frontend
 *   **Mock Data:** Hardcoded JSON logic simulating real-time infrastructure metrics, specifically cooling center *Capacity* and *Backup Generator Status*, demonstrating the platform's ability to integrate with future utility partners (e.g., Alectra).
 
 ### Architecture Diagram (Conceptual)
-![Tech Stack Diagram](./docs/5_tech _stack_diagram.png)
+![Tech Stack Diagram](./docs/5_tech_stack_diagram.png)
