@@ -26,10 +26,10 @@
 
 ## 3. Submission Artifacts
 As required by the hackathon guidelines, our technical and business design documents are available in the `docs/` folder:
-* [System Architecture Diagram](./docs/1_architecture_diagram.png)
-* [UML & Use Case Diagram (CRUD operations)](./docs/2_uml_usecase.png)
+* [System Architecture Diagram](./docs/1_system_architecture_diagram.png)
+* [UML & Use Case Diagram (CRUD operations)](./docs/2_uml_usecase_diagram.png)
 * [Database Schema](./docs/3_database_schema.png)
-* [Feasibility Analysis (Business Case) & MVP Roadmap](./docs/4_feasibility_analysis.pdf)
+* [Feasibility Analysis (Business Case) & MVP Roadmap](./docs/4_feasibility_analysis_mvp.pdf)
 
 ---
 
