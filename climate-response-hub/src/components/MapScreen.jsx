@@ -186,6 +186,13 @@ function getMarkerStyle(code) {
   return { color: "#7c3aed", emoji: "🏢" };
 }
 
+function getCapacityColor(capacity) {
+  if (capacity >= 80) return "#ef4444";
+  if (capacity >= 60) return "#f97316";
+  if (capacity >= 40) return "#eab308";
+  return "#22c55e";
+}
+
 export default function MapScreen({ onAreaSelect }) {
   const mapDiv = useRef(null);
   const heatRiskRef = useRef(75);
@@ -216,6 +223,14 @@ export default function MapScreen({ onAreaSelect }) {
       map,
       center: [-79.3832, 43.6532],
       zoom: 10,
+
+      // popup: {
+      //   dockEnabled: false,
+      //   actions: [],
+      //   visibleElements: {
+      //     actionBar: false,
+      //   },
+      // },
     });
 
     let zoomWatcher = null;
@@ -257,11 +272,37 @@ export default function MapScreen({ onAreaSelect }) {
             popupTemplate: {
               title: place.name,
               content: `
-                Type: ${place.type}<br/>
-                Address: ${place.address}<br/>
-                Phone: ${place.phone}<br/>
-                Hours: ${place.hours}<br/>
-                Amenities: ${place.amenities}
+                <div style="font-size: 13px; line-height: 1.45;">
+                  <div style="margin-top: 12px;">
+                    <b>Capacity:</b>
+                    <span style="color: ${getCapacityColor(place.capacity)}; font-weight: 800;">
+                      ${place.capacity}%
+                    </span>
+
+                    <div style="
+                      width: 100%;
+                      height: 8px;
+                      background: #334155;
+                      border-radius: 999px;
+                      overflow: hidden;
+                      margin-top: 5px;
+                    ">
+                      <div style="
+                        width: ${place.capacity}%;
+                        height: 100%;
+                        background: ${getCapacityColor(place.capacity)};
+                        border-radius: 999px;
+                      "></div>
+                    </div>
+                  <div><b>Type:</b> ${place.type}</div>
+                  <div><b>Address:</b> ${place.address}</div>
+                  <div><b>Phone:</b> ${place.phone}</div>
+                  <div><b>Hours:</b> ${place.hours}</div>
+                  <div><b>Amenities:</b> ${place.amenities}</div>
+
+
+                  </div>
+                </div>
               `,
             },
           }),
