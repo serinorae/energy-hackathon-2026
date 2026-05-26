@@ -155,32 +155,37 @@ function calculateFinalRisk(areaCode, weatherRisk) {
   };
 }
 
-function emojiIcon(emoji, bgColor) {
+function emojiIcon(place) {
+  const hasBackup = place.backupPower === true;
+  const noBackup = place.backupPower === false;
+
+  const backupColor = hasBackup ? "#16a34a" : noBackup ? "#dc2626" : "#6b7280";
+  const backupText = hasBackup || noBackup ? "⚡" : "?";
+
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-      <circle cx="24" cy="24" r="22" fill="${bgColor}" stroke="white" stroke-width="1.5"/>
-      <text x="24" y="31" text-anchor="middle" font-size="22" font-family="Arial, sans-serif">${emoji}</text>
+    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+      <circle cx="24" cy="24" r="20" fill="#7c3aed" stroke="white" stroke-width="2"/>
+      <text x="24" y="31" text-anchor="middle" font-size="21" font-family="Arial, sans-serif">🏢</text>
+
+      <circle cx="39" cy="39" r="12" fill="${backupColor}" stroke="white" stroke-width="2"/>
+      <text x="39" y="45" text-anchor="middle" font-size="13" font-family="Arial, sans-serif">${backupText}</text>
     </svg>
   `;
 
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
 
-function getMarkerStyle(code) {
-  if (code === "LIBRARY") {
-    return { color: "#2563eb", emoji: "📚" };
+function getMarkerStyle(place) {
+  if (place.backupPower === true) {
+    return { color: "#16a34a", emoji: "⚡" };
   }
 
-  if (code === "COMM_CNTR") {
-    return { color: "#7c3aed", emoji: "🏢" };
+  if (place.backupPower === false) {
+    return { color: "#dc2626", emoji: "⚡" };
   }
 
-  if (code === "CVC_CNTR") {
-    return { color: "#dc2626", emoji: "❄️" };
-  }
-
-  if (code === "MALL") {
-    return { color: "#f59e0b", emoji: "🛍️" };
+  if (place.backupPower === null || place.backupPower === undefined) {
+    return { color: "#6b7280", emoji: "?" };
   }
 
   return { color: "#7c3aed", emoji: "🏢" };
@@ -253,8 +258,6 @@ export default function MapScreen({ onAreaSelect }) {
           return;
         }
 
-        const markerStyle = getMarkerStyle(place.code);
-
         coolingLayer.add(
           new Graphic({
             geometry: {
@@ -264,9 +267,9 @@ export default function MapScreen({ onAreaSelect }) {
             },
             symbol: {
               type: "picture-marker",
-              url: emojiIcon(markerStyle.emoji, markerStyle.color),
-              width: view.zoom < 11 ? "18px" : "21px",
-              height: view.zoom < 11 ? "18px" : "21px",
+              url: emojiIcon(place),
+              width: view.zoom < 11 ? "22px" : "25px",
+              height: view.zoom < 11 ? "22px" : "25px",
             },
             attributes: place,
             popupTemplate: {
