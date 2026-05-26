@@ -1,6 +1,9 @@
 import { useState } from "react";
 import MapScreen from "./components/MapScreen";
 import Dashboard from "./components/Dashboard";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import SummaryCards from "./components/SummaryCards";
 import "./App.css";
 
 function App() {
@@ -8,7 +11,15 @@ function App() {
 
   return (
     <div className="app">
-      <MapScreen onAreaSelect={setSelectedArea} />
+      <Header />
+
+      <Sidebar />
+
+      <main className="main-content">
+        <MapScreen onAreaSelect={setSelectedArea} />
+        <SummaryCards />
+      </main>
+
       <Dashboard selectedArea={selectedArea} />
     </div>
   );

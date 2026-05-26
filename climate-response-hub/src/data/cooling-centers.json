@@ -1,13 +1,13 @@
 [
   {
-    "name": "Metro Toronto Reference Library",
-    "lat": 43.6719,
-    "lng": -79.3867,
+    "name": "Metro Toronto Library",
+    "lat": 43.6532,
+    "lng": -79.3832,
     "capacity": 92,
     "backupPower": true
   },
   {
-    "name": "Allan Gardens Community Centre",
+    "name": "Allan Gardens Centre",
     "lat": 43.6617,
     "lng": -79.3747,
     "capacity": 76,
@@ -32,6 +32,27 @@
     "lat": 43.6434,
     "lng": -79.5656,
     "capacity": 41,
+    "backupPower": false
+  },
+  {
+    "name": "York Community Centre",
+    "lat": 43.689,
+    "lng": -79.472,
+    "capacity": 83,
+    "backupPower": "unknown"
+  },
+  {
+    "name": "East York Cooling Hub",
+    "lat": 43.705,
+    "lng": -79.34,
+    "capacity": 61,
+    "backupPower": true
+  },
+  {
+    "name": "West Toronto Shelter",
+    "lat": 43.651,
+    "lng": -79.445,
+    "capacity": 87,
     "backupPower": false
   }
 ]
