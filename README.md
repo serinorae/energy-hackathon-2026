@@ -69,26 +69,37 @@ The platform consists of three main layers:
 flowchart LR
     subgraph Data_Layer["Data & Mapping Layer"]
         direction TB
-        A[Live Weather Data] -->|Heat Index| C[ArcGIS Web Maps]
-        B[Infrastructure Status] -->|Power/Capacity| C
-        D[Vulnerability Index] --> C
+        A[Real Climate Data\nEsri Living Atlas]
+        B[Mock APIs\nCapacity & Backup Power]
+        DB[(MongoDB\nAction Logs Database)]
     end
 
-    subgraph Logic_Layer["Triage & Logic Layer"]
+    subgraph Logic_Layer["Processing & Triage Layer"]
         direction TB
-        C -->|Spatial Data| E[Triage Algorithm]
-        E -->|Recommended Actions| F[Unified Dashboard]
+        C[ArcGIS Spatial Analysis\nHeat & Vulnerability]
+        D[Node.js / Express\nTriage Logic Engine]
+        
+        A -->|Demographics| C
+        B -->|Live Status| D
+        C -->|Risk Scores| D
     end
 
-    subgraph Serving_Layer["Command Center Dashboard"]
+    subgraph Serving_Layer["Serving Layer / UI"]
         direction TB
-        F --> G[Coordinator UI]
+        E[React Vite Dashboard\nArcGIS Maps SDK]
+        F[Coordinator UI\nSpot Gaps & Take Action]
+        E --- F
     end
 
-    classDef data fill:#d5f5e3 stroke:#27ae60 stroke-width:2px,stroke-dasharray:5 5;
-    classDef logic fill:#d6eaf8 stroke:#2980b9 stroke-width:2px,stroke-dasharray:5 5;
-    classDef ui fill:#fcf3cf stroke:#f1c40f stroke-width:2px,stroke-dasharray:5 5;
+    D -->|Actionable Insights\n& Active Badges| E
+    
+    F -.->|Two-Way Feedback Loop:\nLog Action & Sync Status| DB
+    DB -.->|Update State| D
 
-    class C,A,B,D data;
-    class E logic;
-    class F,G ui;
+    classDef data fill:#d5f5e3,stroke:#27ae60,stroke-width:2px,stroke-dasharray:5 5;
+    classDef logic fill:#d6eaf8,stroke:#2980b9,stroke-width:2px,stroke-dasharray:5 5;
+    classDef ui fill:#fcf3cf,stroke:#f1c40f,stroke-width:2px,stroke-dasharray:5 5;
+
+    class A,B,DB data;
+    class C,D logic;
+    class E,F ui;
