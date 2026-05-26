@@ -268,10 +268,37 @@ body,
   text-transform: uppercase;
 }
 
+.risk-score {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  margin: 8px 0 4px;
+}
+
 .risk-score span {
   font-size: 40px;
   font-weight: 800;
+  line-height: 1;
+}
+
+.risk-score span.critical {
   color: #ef4444;
+}
+
+.risk-score span.high {
+  color: #f97316;
+}
+
+.risk-score span.moderate {
+  color: #eab308;
+}
+
+.risk-score span.lower {
+  color: #22c55e;
+}
+
+.risk-score span.waiting {
+  color: #64748b;
 }
 
 .risk-score small {
@@ -484,4 +511,41 @@ body,
 
 .legend-icon.backup-unknown {
   background: #6b7280;
+}
+
+.centre-row.detailed {
+  grid-template-columns: 30px 1fr 78px 86px;
+}
+
+.capacity strong {
+  display: block;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.backup-status span {
+  display: block;
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.backup-status strong {
+  font-size: 11px;
+  color: #f8fafc;
+}
+
+.mini-bar.red div {
+  background: #ef4444;
+}
+
+.mini-bar.orange div {
+  background: #f97316;
+}
+
+.mini-bar.yellow div {
+  background: #eab308;
+}
+
+.mini-bar.green div {
+  background: #22c55e;
 }

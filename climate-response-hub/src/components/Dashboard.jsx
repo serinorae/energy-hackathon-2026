@@ -3,6 +3,8 @@ export default function Dashboard({ selectedArea }) {
     name: "Select a neighbourhood",
     riskScore: 0,
     level: "Waiting",
+    coolingPlaces: [],
+    coolingPlaceCount: 0,
   };
 
   const getLevelClass = () => area.level?.toLowerCase();
@@ -13,13 +15,7 @@ export default function Dashboard({ selectedArea }) {
 
   const heatIndex = area.riskScore ? Math.round(30 + area.riskScore / 12) : "-";
 
-  const nearbyCentres = area.riskScore
-    ? area.riskScore >= 80
-      ? 2
-      : area.riskScore >= 60
-        ? 4
-        : 6
-    : "-";
+  const coolingPlaces = area.coolingPlaces || [];
 
   const action =
     area.level === "Critical"
@@ -41,7 +37,7 @@ export default function Dashboard({ selectedArea }) {
         <p className="label">Heat Vulnerability Index</p>
 
         <div className="risk-score">
-          <span>{area.riskScore || "-"}</span>
+          <span className={getLevelClass()}>{area.riskScore || "-"}</span>
           <small>/100</small>
         </div>
 
@@ -75,56 +71,82 @@ export default function Dashboard({ selectedArea }) {
 
       <section className="panel-card">
         <div className="panel-title">
-          <h3>Nearest Cooling Centres</h3>
-          <small>within 5 km</small>
+          <h3>Cooling Places in This Area</h3>
+          <small>selected neighbourhood</small>
         </div>
 
         <div className="centre-list">
-          <div className="centre-row">
-            <div className="centre-icon">🏢</div>
-            <div className="centre-info">
-              <strong>Metro Toronto Library</strong>
-              <p>0.8 km</p>
-            </div>
-            <div className="capacity">
-              <span>92%</span>
-              <div className="mini-bar">
-                <div style={{ width: "92%" }}></div>
-              </div>
-            </div>
-          </div>
+          {coolingPlaces.length > 0 ? (
+            coolingPlaces.map((place) => {
+              const capacityClass =
+                place.capacity >= 80
+                  ? "red"
+                  : place.capacity >= 60
+                    ? "orange"
+                    : place.capacity >= 40
+                      ? "yellow"
+                      : "green";
 
-          <div className="centre-row">
-            <div className="centre-icon">🏢</div>
-            <div className="centre-info">
-              <strong>Allan Gardens Centre</strong>
-              <p>1.6 km</p>
-            </div>
-            <div className="capacity">
-              <span>76%</span>
-              <div className="mini-bar orange">
-                <div style={{ width: "76%" }}></div>
-              </div>
-            </div>
-          </div>
+              const backupText =
+                place.backupPower === true
+                  ? "Yes"
+                  : place.backupPower === false
+                    ? "No"
+                    : "Unknown";
 
-          <div className="centre-row">
-            <div className="centre-icon">🏢</div>
-            <div className="centre-info">
-              <strong>Community Centre</strong>
-              <p>2.1 km</p>
-            </div>
-            <div className="capacity">
-              <span>54%</span>
-              <div className="mini-bar yellow">
-                <div style={{ width: "54%" }}></div>
-              </div>
-            </div>
-          </div>
+              const backupIcon =
+                place.backupPower === true
+                  ? "✅"
+                  : place.backupPower === false
+                    ? "⚡"
+                    : "❔";
+
+              return (
+                <div className="centre-row detailed" key={place.id}>
+                  <div className="centre-icon">
+                    {place.code === "LIBRARY"
+                      ? "📚"
+                      : place.code === "COMM_CNTR"
+                        ? "🏢"
+                        : place.code === "CVC_CNTR"
+                          ? "❄️"
+                          : place.code === "MALL"
+                            ? "🛍️"
+                            : "🏢"}
+                  </div>
+
+                  <div className="centre-info">
+                    <strong>{place.name}</strong>
+                    <p>{place.type}</p>
+                    <p>{place.address}</p>
+                  </div>
+
+                  <div className="capacity">
+                    <span>Capacity</span>
+                    <strong>{place.capacity}%</strong>
+                    <div className={`mini-bar ${capacityClass}`}>
+                      <div style={{ width: `${place.capacity}%` }}></div>
+                    </div>
+                  </div>
+
+                  <div className="backup-status">
+                    <span>Backup Power</span>
+                    <strong>
+                      {backupIcon} {backupText}
+                    </strong>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <p className="nearby-count">
+              Select a neighbourhood to view cooling places.
+            </p>
+          )}
         </div>
 
         <p className="nearby-count">
-          Cooling centres nearby: <strong>{nearbyCentres}</strong>
+          Cooling places found: <strong>{coolingPlaces.length || "-"}</strong>
         </p>
       </section>
 
