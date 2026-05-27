@@ -7,7 +7,7 @@ The project combines map data, weather risk, cooling centre locations, vulnerabi
 > Our goal is not to replace emergency coordinators.  
 > Our goal is to help them see risk faster, prioritize support more clearly, and coordinate response actions more effectively.
 
-**Video Link:** [Watch our 5-minute Pitch Video](tbd)
+**Video Link:** [Watch our 5-minute Pitch Video](youtube.com/watch?v=rfzgxAIvG8Q&feature=youtu.be)
 
 **Live Demo:** [Climate Response Hub App (Vercel)](https://energy-hackathon-2026-beta.vercel.app/)
 
