@@ -2,17 +2,12 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <nav>
-        <button className="active">▦ Overview</button>
-        <button>⌖ Map</button>
-        <button>⌂ Shelters</button>
-        <button>♢ Alerts</button>
-        <button>↗ Reports</button>
-        <button>⚙ Settings</button>
+        <button className="active">Overview</button>
       </nav>
 
       <div className="legend">
         <h3>Legend</h3>
-        <p>Heat Vulnerability</p>
+        <p>Heat Vulnerability <span className="data-note">Prototype estimate</span></p>
         <span>
           <b className="critical-box"></b> Critical (80-100)
         </span>
@@ -29,18 +24,18 @@ export default function Sidebar() {
 
       <div className="facility-legend">
         <div className="legend-row">
-          <span className="legend-icon cooling">🏢</span>
+          <span className="legend-icon cooling">C</span>
           <span>Cooling Centre</span>
         </div>
 
         <div className="legend-row">
-          <span className="legend-icon backup-yes">⚡</span>
-          <span>Has Backup Power</span>
+          <span className="legend-icon backup-yes">P</span>
+          <span>Has Backup Power <em className="data-note">Demo data</em></span>
         </div>
 
         <div className="legend-row">
-          <span className="legend-icon backup-no">⚡</span>
-          <span>No Backup Power</span>
+          <span className="legend-icon backup-no">!</span>
+          <span>No Backup Power <em className="data-note">Demo data</em></span>
         </div>
 
         <div className="legend-row">

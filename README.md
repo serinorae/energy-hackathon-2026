@@ -87,7 +87,7 @@ Climate Response Hub provides an interactive dashboard where coordinators can:
 - log planned response actions
 - update or clear response records after an event
 
-The dashboard acts as a planning and coordination layer. It does not directly dispatch emergency services or control infrastructure.
+The dashboard acts as a planning and coordination layer. It does not directly send emergency services or control infrastructure.
 
 ---
 
@@ -123,7 +123,7 @@ As an emergency management coordinator, I want to view neighbourhood-level clima
 
 ### User Story
 
-As an emergency management coordinator, I want to log a planned response action for a vulnerable neighbourhood so that other coordinators can see which areas are already being handled.
+As an emergency management coordinator, I want to log a planned response action for a vulnerable neighbourhood so that other coordinators can see which areas already have a response plan on file.
 
 ### Demo Flow
 
@@ -139,7 +139,7 @@ As an emergency management coordinator, I want to log a planned response action 
 
 ### Important Clarification
 
-Climate Response Hub does not physically dispatch emergency resources.
+Climate Response Hub does not physically send emergency resources.
 
 It helps coordinators plan, log, and track response actions. Real-world action happens outside the system.
 
@@ -182,7 +182,7 @@ Some data is mocked or hard-coded for the MVP because it is not publicly availab
 Mocked data includes:
 
 - backup generator availability
-- live shelter or cooling centre capacity
+- shelter or cooling centre capacity values
 - some vulnerability indicators
 - response action records
 - action status
@@ -190,7 +190,7 @@ Mocked data includes:
 
 This is intentional for the hackathon MVP.
 
-In a production version, these values could be connected to municipal databases, emergency management systems, shelter management tools, utility partner APIs, or real-time operational data sources.
+In a production version, these values could be connected to municipal databases, emergency management systems, shelter management tools, utility partner APIs, or verified operational data sources.
 
 ---
 
@@ -327,7 +327,7 @@ The solution is technically feasible because it uses:
 - weather data
 - local/mock storage for action logging
 
-The MVP does not require a complex backend. Future versions could connect to municipal databases, live shelter systems, emergency management platforms, or utility partner APIs.
+The MVP does not require a complex backend. Future versions could connect to municipal databases, shelter management systems, emergency management platforms, or utility partner APIs.
 
 ### Operational Feasibility
 
@@ -353,7 +353,7 @@ Climate Response Hub can help sponsors and energy partners understand where supp
 Potential implementation opportunities include:
 
 - identifying priority locations for backup power support
-- planning mobile cooling or emergency support deployment
+- planning mobile cooling or emergency support requests
 - supporting resilience hub investment decisions
 - helping public agencies target limited resources
 - improving coordination between city teams, public health, and energy partners
@@ -377,10 +377,10 @@ This makes the project useful not only as a student prototype, but as a practica
 
 ### MVP Does Not Include
 
-- actual emergency dispatch
-- real-time city database integration
-- live shelter capacity from official systems
-- real-time power grid control
+- automatic resource assignment
+- production city database integration
+- official shelter capacity integrations
+- power grid or infrastructure control
 - direct citizen-facing alerts
 
 ---

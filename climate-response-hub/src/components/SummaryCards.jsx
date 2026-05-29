@@ -25,25 +25,25 @@ export default function SummaryCards({ selectedArea }) {
       <div className="summary-card">
         <p>Nearby Critical Risk Areas</p>
         <strong className="red">{criticalNeighbourhoods}</strong>
-        <span>based on selected area</span>
+        <span>prototype estimate</span>
       </div>
 
       <div className="summary-card">
         <p>People at High Risk</p>
         <strong className="orange">{highRiskPeople}</strong>
-        <span>estimated in this area</span>
+        <span>prototype estimate</span>
       </div>
 
       <div className="summary-card">
         <p>Cooling Places in Area</p>
         <strong className="green">{availableCentres}</strong>
-        <span>available locations</span>
+        <span>Toronto Open Data</span>
       </div>
 
       <div className="summary-card">
         <p>Centres at Capacity &gt; 80%</p>
         <strong className="red">{centresAtCapacity}</strong>
-        <span>require attention</span>
+        <span>simulated for MVP</span>
       </div>
     </section>
   );

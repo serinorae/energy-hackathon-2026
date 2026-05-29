@@ -1,20 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+function loadManagedAction(areaCode) {
+  if (!areaCode) return null;
+
+  const saved = localStorage.getItem(`managed-district-${areaCode}`);
+  return saved ? JSON.parse(saved) : null;
+}
 
 export function useManagedAction(selectedArea) {
-  const [managedAction, setManagedAction] = useState(null);
   const [actionNote, setActionNote] = useState("");
+  const [revision, setRevision] = useState(0);
 
-  useEffect(() => {
-    if (!selectedArea?.code) {
-      setManagedAction(null);
-      setActionNote("");
-      return;
-    }
-
-    const saved = localStorage.getItem(`managed-district-${selectedArea.code}`);
-    setManagedAction(saved ? JSON.parse(saved) : null);
-    setActionNote("");
-  }, [selectedArea]);
+  const managedAction = loadManagedAction(selectedArea?.code, revision);
 
   const saveAction = () => {
     if (!selectedArea?.code) return null;
@@ -32,7 +29,7 @@ export function useManagedAction(selectedArea) {
       JSON.stringify(newAction),
     );
     window.dispatchEvent(new Event("managed-district-updated"));
-    setManagedAction(newAction);
+    setRevision((current) => current + 1);
     setActionNote("");
     return newAction;
   };
@@ -41,7 +38,7 @@ export function useManagedAction(selectedArea) {
     if (!selectedArea?.code) return;
     localStorage.removeItem(`managed-district-${selectedArea.code}`);
     window.dispatchEvent(new Event("managed-district-updated"));
-    setManagedAction(null);
+    setRevision((current) => current + 1);
     setActionNote("");
   };
 

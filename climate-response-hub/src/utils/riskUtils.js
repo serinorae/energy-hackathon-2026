@@ -24,7 +24,7 @@ export function calculateFinalRisk(areaCode, weatherRisk) {
 }
 
 export function getRecommendedAction(level) {
-  if (level === "Critical") return "DEPLOY MOBILE COOLING UNIT";
+  if (level === "Critical") return "PLAN MOBILE COOLING SUPPORT";
   if (level === "High") return "MONITOR COOLING CENTRE CAPACITY";
   if (level === "Moderate") return "PREPARE COMMUNITY OUTREACH";
   return "CONTINUE MONITORING";

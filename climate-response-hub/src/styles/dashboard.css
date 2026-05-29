@@ -74,6 +74,14 @@
   font-size: 13px;
 }
 
+.data-note {
+  color: #94a3b8;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 /* Risk */
 .risk-badge {
   padding: 5px 9px;
@@ -173,13 +181,28 @@
 }
 
 .metric-icon {
-  font-size: 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.12);
+  color: #cbd5e1;
+  font-size: 9px;
+  font-weight: 800;
 }
 
 .metric-box p {
   margin: 2px 0;
   font-size: 11px;
   color: #94a3b8;
+}
+
+.metric-box .data-note {
+  display: block;
+  margin-top: 1px;
 }
 
 .metric-box strong {
@@ -203,13 +226,16 @@
 }
 
 .centre-icon {
-  width: 27px;
-  height: 27px;
-  background: #6d28d9;
-  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  background: rgba(124, 58, 237, 0.18);
+  border: 1px solid rgba(167, 139, 250, 0.45);
+  border-radius: 7px;
   display: grid;
   place-items: center;
-  font-size: 13px;
+  color: #ddd6fe;
+  font-size: 9px;
+  font-weight: 800;
 }
 
 .centre-info strong {
@@ -223,6 +249,12 @@
   margin: 2px 0;
   color: #94a3b8;
   font-size: 11px;
+}
+
+.capacity .data-note,
+.backup-status .data-note {
+  display: block;
+  margin-top: 1px;
 }
 
 .mini-bar {
@@ -252,23 +284,37 @@
   gap: 10px;
   padding: 11px;
   border-radius: 8px;
-  background: rgba(127, 29, 29, 0.8);
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #64748b;
 }
 
 .action-card.high {
-  background: rgba(154, 52, 18, 0.8);
+  border-left-color: #f97316;
 }
 
 .action-card.moderate {
-  background: rgba(133, 77, 14, 0.8);
+  border-left-color: #eab308;
 }
 
 .action-card.lower {
-  background: rgba(22, 101, 52, 0.8);
+  border-left-color: #22c55e;
+}
+
+.action-card.critical {
+  border-left-color: #ef4444;
 }
 
 .alert-icon {
-  font-size: 24px;
+  flex: 0 0 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(148, 163, 184, 0.13);
+  color: #e2e8f0;
+  font-size: 11px;
+  font-weight: 800;
 }
 
 .action-card strong {
@@ -288,7 +334,7 @@
   font-size: 13px;
 }
 .centre-row.detailed {
-  grid-template-columns: 30px 1fr 78px 86px;
+  grid-template-columns: 30px minmax(0, 1fr) 84px 94px;
 }
 
 .capacity strong {
@@ -306,6 +352,28 @@
 .backup-status strong {
   font-size: 11px;
   color: #f8fafc;
+}
+
+.backup-pill {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 3px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.backup-pill.yes {
+  color: #bbf7d0;
+  border-color: rgba(34, 197, 94, 0.35);
+  background: rgba(22, 101, 52, 0.2);
+}
+
+.backup-pill.no {
+  color: #fecaca;
+  border-color: rgba(239, 68, 68, 0.35);
+  background: rgba(127, 29, 29, 0.2);
 }
 
 .mini-bar.red div {
@@ -326,8 +394,12 @@
 
 .map-wrapper {
   position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 6px;
   width: 100%;
   height: 100%;
+  min-height: 0;
 }
 
 .risk-toggle {
@@ -397,8 +469,8 @@
   margin: 8px 0 10px;
   padding: 7px 9px;
   border-radius: 7px;
-  background: rgba(22, 101, 52, 0.7);
-  border: 1px solid rgba(34, 197, 94, 0.7);
+  background: rgba(22, 101, 52, 0.28);
+  border: 1px solid rgba(34, 197, 94, 0.35);
   color: #bbf7d0;
   font-size: 12px;
   font-weight: 700;

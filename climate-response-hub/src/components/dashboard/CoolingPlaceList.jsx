@@ -1,17 +1,17 @@
 import { getCapacityClass } from "../../utils/riskUtils";
 
 function getPlaceIcon(code) {
-  if (code === "LIBRARY") return "📚";
-  if (code === "COMM_CNTR") return "🏢";
-  if (code === "CVC_CNTR") return "❄️";
-  if (code === "MALL") return "🛍️";
-  return "🏢";
+  if (code === "LIBRARY") return "LIB";
+  if (code === "COMM_CNTR") return "CC";
+  if (code === "CVC_CNTR") return "CV";
+  if (code === "MALL") return "M";
+  return "C";
 }
 
 function getBackupInfo(backupPower) {
-  if (backupPower === true) return { icon: "✅", text: "Yes" };
-  if (backupPower === false) return { icon: "⚡", text: "No" };
-  return { icon: "❔", text: "Unknown" };
+  if (backupPower === true) return { className: "yes", text: "Yes" };
+  if (backupPower === false) return { className: "no", text: "No" };
+  return { className: "unknown", text: "Unknown" };
 }
 
 export default function CoolingPlaceList({ coolingPlaces }) {
@@ -19,7 +19,7 @@ export default function CoolingPlaceList({ coolingPlaces }) {
     <section className="panel-card">
       <div className="panel-title">
         <h3>Cooling Places in This Area</h3>
-        <small>selected neighbourhood</small>
+        <small>Toronto Open Data + demo fields</small>
       </div>
 
       <div className="centre-list">
@@ -39,7 +39,9 @@ export default function CoolingPlaceList({ coolingPlaces }) {
                 </div>
 
                 <div className="capacity">
-                  <span>Capacity</span>
+                  <span>
+                    Capacity <em className="data-note">Simulated for MVP</em>
+                  </span>
                   <strong>{place.capacity}%</strong>
                   <div className={`mini-bar ${capacityClass}`}>
                     <div style={{ width: `${place.capacity}%` }} />
@@ -47,9 +49,11 @@ export default function CoolingPlaceList({ coolingPlaces }) {
                 </div>
 
                 <div className="backup-status">
-                  <span>Backup Power</span>
-                  <strong>
-                    {backup.icon} {backup.text}
+                  <span>
+                    Backup Power <em className="data-note">Demo data</em>
+                  </span>
+                  <strong className={`backup-pill ${backup.className}`}>
+                    {backup.text}
                   </strong>
                 </div>
               </div>

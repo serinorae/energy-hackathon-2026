@@ -10,16 +10,16 @@ These four key documents are designed to provide judges—including representati
 
 ### 1. `system_architecture_diagram.png` (System Architecture Diagram)
 A structural diagram visualizing the platform's overall technology stack and data flow.
-*   **Data & Mapping Layer:** Demonstrates the integration of actual public datasets (such as climate and demographic data from the Esri ArcGIS Living Atlas and the City of Toronto's 500+ Heat Relief Network locations) with mock APIs simulating real-time infrastructure status.
+*   **Data & Mapping Layer:** Demonstrates the integration of actual public datasets (such as climate and demographic data from the Esri ArcGIS Living Atlas and the City of Toronto's 500+ Heat Relief Network locations) with mock data simulating prototype operational status.
 *   **Processing & Triage Layer:** Represents the core logic layer where **React's state management and Open-Meteo API (providing 12-hour forecasts)** refine the data. **ArcGIS Spatial Analysis** calculates distances and localized Energy Equity Scores to provide actionable insights.
-*   **Serving Layer / UI:** Illustrates a two-way feedback loop where processed data is delivered to the React (Vite) dashboard, and actions taken by coordinators are fed back and updated using **`localStorage` (simulating a real-time database for this MVP)** to prevent duplicate efforts.
+*   **Serving Layer / UI:** Illustrates a feedback loop where processed data is delivered to the React (Vite) dashboard, and actions recorded by coordinators are updated using **`localStorage` (simulating a shared action log for this MVP)** to prevent duplicate planning efforts.
 
 ### 2. `uml_usecase_diagram.png` (UML & Use Case Diagram)
 This diagram defines the core CRUD (Create, Read, Update, Delete) functionalities from the perspective of the primary stakeholders: emergency coordinators at Toronto Emergency Management (TEM) and Toronto Shelter & Support Services (TSSS). Instead of a generic system, it specifies actionable, collaborative insights tailored for crisis management to prevent duplicate efforts.
-*   **Create (Log Action Plan):** Logging a new dispatch plan (e.g., **requesting 20 mobile cooling units for Mitchell Field Community Center in Willowdale East**) to mark a high-risk neighborhood as 'handled' on the shared dashboard.
-*   **Read (Assess Situation):** Viewing real-time 'Energy Equity Risk Scores' via Esri GIS data and identifying action gaps by checking the 'badges' of active deployments from other team members.
-*   **Update (Track Status):** Synchronizing the real-time status of physical relief operations (e.g., **another coordinator updating the status from 'Pending' to 'Deployed' once the units have arrived**) to maintain transparency across the emergency management team.
-*   **Delete/Resolve (Clear):** Removing deployment records from the system once the extreme heat event concludes, clearing the alert status and resetting the dashboard for future crisis readiness.
+*   **Create (Log Action Plan):** Logging a planned response note (e.g., **requesting mobile cooling support for Mitchell Field Community Center in Willowdale East**) to show that a coordinator action is on file for a high-risk neighborhood.
+*   **Read (Assess Situation):** Viewing prototype 'Energy Equity Risk Scores' via Esri GIS data and identifying action gaps by checking the badges for logged coordinator actions.
+*   **Update (Track Status):** Updating notes for planned responses (e.g., **another coordinator recording that a follow-up request has been confirmed**) to maintain transparency across the emergency management team.
+*   **Delete/Resolve (Clear):** Clearing logged action records once the extreme heat event concludes, resetting the dashboard for future crisis readiness.
 
 ### 3. `database_schema.png` (Database Schema)
 A schema blueprint showcasing the data structure and entity relationships used within the platform.
